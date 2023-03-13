@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- *
+ * JUnit tests for the ArrayQueue class
  * @author Caleb Willson
  */
 public class ArrayQueueTest {
@@ -13,7 +13,8 @@ public class ArrayQueueTest {
     }
     
     /**
-     * Test that the isEmpty method works
+     * Test that the isEmpty method works.
+     * Also tests that the enqueue and dequeue methods are working
      */
     @Test
     public void testIsEmpty() {
@@ -26,6 +27,7 @@ public class ArrayQueueTest {
     
     /**
      * Test that the front method works
+     * Also tests that the enqueue method works
      */
     @Test
     public void testFront() {
@@ -56,6 +58,7 @@ public class ArrayQueueTest {
     
     /**
      * Test the queue resizing when full.
+     * Also tests that the enqueue method works
      */
     @Test
     public void testResize() {
@@ -96,6 +99,7 @@ public class ArrayQueueTest {
     
     /**
      * Test that the queue is resized properly after wrapping around.
+     * Also tests that the enqueue and dequeue methods are working
      */
     @Test
     public void testWrapAndResize() {
