@@ -1,9 +1,9 @@
 package queue;
 
 /**
- *
+ * Implementation of the queue interface using an array
  * @author Caleb Willson
- * @param <E>
+ * @param <E> The type of element to be stored
  */
 public class ArrayQueue<E> {
     E[] data;
@@ -11,14 +11,14 @@ public class ArrayQueue<E> {
     private int size;
     
     /**
-     *
+     * Constructor for a default size of 10
      */
     public ArrayQueue() {
         this(10);
     }
     
     /**
-     *
+     * Constructor
      * @param capacity
      */
     public ArrayQueue(int capacity) {
@@ -28,9 +28,9 @@ public class ArrayQueue<E> {
     }
     
     /**
-     *
-     * @param element
-     * @throws InvalidDataException
+     * 
+     * @param element to be enqueued
+     * @throws InvalidDataException when a null element is enqueued
      */
     public void enqueue(E element) throws InvalidDataException {
         if (element == null) {
@@ -46,14 +46,14 @@ public class ArrayQueue<E> {
             top = 0;
         }
         
-        data[(top + size) % data.length] = (E)element;
+        data[(top + size) % data.length] = (E) element;
         size++;
     }
     
     /**
      *
-     * @return
-     * @throws QueueEmptyException
+     * @return the front element of the queue and removes that element from the queue
+     * @throws QueueEmptyException when the queue is empty
      */
     public E dequeue() throws QueueEmptyException {
         if (size == 0) {
@@ -69,8 +69,8 @@ public class ArrayQueue<E> {
     
     /**
      *
-     * @return
-     * @throws QueueEmptyException
+     * @return the front element of the queue
+     * @throws QueueEmptyException when the queue is empty
      */
     public E front() throws QueueEmptyException {
         if (size == 0) {
@@ -82,7 +82,7 @@ public class ArrayQueue<E> {
     
     /**
      *
-     * @return
+     * @return the size of the queue
      */
     public int size() {
         return size;
@@ -90,7 +90,7 @@ public class ArrayQueue<E> {
     
     /**
      *
-     * @return
+     * @return true if the queue is empty
      */
     public boolean isEmpty() {
         return size == 0;
